@@ -1,5 +1,5 @@
 import motor.motor_asyncio
-from config import DB_URL, DB_NAME
+from config import DB_URI, DB_NAME
 
 class Database:
 
@@ -64,7 +64,7 @@ class Database:
         user = await self.col.find_one({'_id': int(id)})
         return user.get('lazy_target_chat_id', None)
 
-db = Database(DB_URL, DB_NAME)
+db = Database(DB_URI, DB_NAME)
 
 
 
